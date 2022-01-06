@@ -301,7 +301,7 @@ export default function App() {
   //////////////////////////
   let dispPeople = displayPersonBar(peopleList);
   let displayStaff = displayStaffBar(stafflist);
-  let provstaffinf = provideStaffInfo(stafflist);
+  //let provstaffinf = provideStaffInfo(stafflist);
   return (
     <div className="App">
       <div className="titleContainer">
@@ -319,12 +319,12 @@ export default function App() {
       <h1 className="title">Student Section</h1>
       {alertOpen ? (
         <div className="alert">
-          <span className="closebtn" onClick={() => setAlertOpen(false)}>
-            &times;
-          </span>
           Click the student profiles to look at github
           <br></br>
           Click on the staff profiles for more information
+          <span className="closebtn" onClick={() => setAlertOpen(false)}>
+            &times;
+          </span>
         </div>
       ) : null}
       {dispPeople}
