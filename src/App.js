@@ -2,6 +2,15 @@ import React from "react";
 import "./styles.css";
 import { useState } from "react";
 
+//////////TO-DO////////////
+//makea color library to replace trash color scheme 2/10
+
+//create components of everything on seperate files and bring it all together 0/10
+
+//learn Modal to make the staff card pop-up 1/10
+
+//clean css 5/10
+
 export default function App() {
   ////Student and Staff list/////
   let peopleList = [
@@ -293,6 +302,11 @@ export default function App() {
       media: "NA"
     }
   ];
+  let colorPrototype = [
+    { red: "#DB4437" },
+    { blue: "#4285F4" },
+    { purple: "#9932CC" }
+  ];
   ////////////////for displaying popup box/////////////
   // const [isOpen, setIsOpen] = useState(true);
   ////////////////for displaying alert box//////////
@@ -312,6 +326,7 @@ export default function App() {
           <span style={{ color: "#0F9D58" }}>G</span>
           <span style={{ color: "#4285F4" }}>L</span>
           <span style={{ color: "#DB4437" }}>E</span>
+          {/*nbsp = white space in jsx  */}
           &nbsp;
           <span> FLWII Class Roster Data </span>
         </h1>
@@ -328,7 +343,7 @@ export default function App() {
         </div>
       ) : null}
       {dispPeople}
-      <h1 className="title button"> Staff Section </h1>
+      <h1 className="title"> Staff Section </h1>
       {displayStaff}
       {/*{provstaffinf}    use this to diplay staff cards*/}
     </div>
@@ -364,7 +379,7 @@ function displayStaffBar(stafflist) {
     <div className="canv">
       {stafflist.map((person, index) => (
         <a key={index} href={person.git}>
-          <div className="studentInfo staffCell">
+          <div className="studentInfo">
             <p>{person["name"]}</p>
             <p>{person["pos"]}</p>
             <p>{person["pronoun"]}</p>

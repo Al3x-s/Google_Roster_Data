@@ -11,12 +11,13 @@
 }
 
 .studentInfo {
-  display: flex;
-  flex-direction: column;
   border-style: solid;
   border-width: thin;
   margin: 5px;
   padding: 15px;
+}
+.studentInfo p {
+  margin: 2px;
 }
 .canv {
   display: grid;
