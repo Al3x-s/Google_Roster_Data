@@ -305,16 +305,16 @@ export default function App() {
   return (
     <div className="App">
       <div className="titleContainer">
-        <div className="google">
-          <h1 style={{ color: "#4285F4" }}>G</h1>
-          <h1 style={{ color: "#DB4437" }}>O</h1>
-          <h1 style={{ color: "#F4B400" }}>O</h1>
-          <h1 style={{ color: "#0F9D58" }}>G</h1>
-          <h1 style={{ color: "#4285F4" }}>L</h1>
-          <h1 style={{ color: "#DB4437" }}>E</h1>
-        </div>
-        <h1 className="whitespace"> </h1>
-        <h1 className="mainTitle">FLWII Class Roster Data</h1>
+        <h1>
+          <span style={{ color: "#4285F4" }}>G</span>
+          <span style={{ color: "#DB4437" }}>O</span>
+          <span style={{ color: "#F4B400" }}>O</span>
+          <span style={{ color: "#0F9D58" }}>G</span>
+          <span style={{ color: "#4285F4" }}>L</span>
+          <span style={{ color: "#DB4437" }}>E</span>
+          &nbsp;
+          <span> FLWII Class Roster Data </span>
+        </h1>
       </div>
       <h1 className="title">Student Section</h1>
       {alertOpen ? (
@@ -338,19 +338,21 @@ export default function App() {
 function displayPersonBar(peopleList) {
   return (
     <div className="canv">
-      {peopleList.map((person) => (
-        <a className="cellDecoration" href={person.git} target="_blank_">
-          <tr
-            style={{ borderColor: person["color"] }}
-            className="studentInfo studentCell"
-          >
-            <td>Name: {person["name"]}</td>
-            <td>Pronouns: {person["pronoun"]}</td>
-            <td>School: {person["school"]}</td>
-            <td>Year: {person["grad"]}</td>
-            <td>Color: {person["color"]}</td>
-            <td>Media: {person["media"]}</td>
-          </tr>
+      {peopleList.map((person, index) => (
+        <a
+          key={index}
+          className="cellDecoration"
+          href={person.git}
+          target="_blank_"
+        >
+          <div style={{ borderColor: person["color"] }} className="studentInfo">
+            <p>Name: {person["name"]}</p>
+            <p>Pronouns: {person["pronoun"]}</p>
+            <p>School: {person["school"]}</p>
+            <p>Year: {person["grad"]}</p>
+            <p>Color: {person["color"]}</p>
+            <p>Media: {person["media"]}</p>
+          </div>
         </a>
       ))}
     </div>
@@ -360,15 +362,15 @@ function displayPersonBar(peopleList) {
 function displayStaffBar(stafflist) {
   return (
     <div className="canv">
-      {stafflist.map((person) => (
-        <a href={person.git}>
-          <tr className="studentInfo staffCell">
-            <td>{person["name"]}</td>
-            <td>{person["pos"]}</td>
-            <td>{person["pronoun"]}</td>
-            <td>{person["color"]}</td>
-            <td>{person["media"]}</td>
-          </tr>
+      {stafflist.map((person, index) => (
+        <a key={index} href={person.git}>
+          <div className="studentInfo staffCell">
+            <p>{person["name"]}</p>
+            <p>{person["pos"]}</p>
+            <p>{person["pronoun"]}</p>
+            <p>{person["color"]}</p>
+            <p>{person["media"]}</p>
+          </div>
         </a>
       ))}
     </div>
